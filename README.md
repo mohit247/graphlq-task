@@ -10,3 +10,7 @@ npm install
 To run the app in your development environment run:
 
 npm run dev
+
+To run the Test Cases:
+
+npm run test
