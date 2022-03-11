@@ -34,10 +34,10 @@ describe('User Methods', () => {
       }
     `;
     const user = {
-      firstName: 'first name',
-      lastName: 'The Brand',
-      email: 'Description@gmail.com',
-      age: 13,
+      firstName: 'jon',
+      lastName: 'snow',
+      email: 'jon@gmail.com',
+      age: 23,
     };
 
     const { data } = await mutate({
