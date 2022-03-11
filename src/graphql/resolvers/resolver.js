@@ -4,7 +4,6 @@ const { Types } = require('mongoose');
 let UserModel = require('../../models/User');
 const resolvers = {
   Query: {
-    hello: () => 'Hello Mohit!',
     getUsers: async () => {
       console.log(' UserModel.find()', await UserModel.find().lean());
       return await UserModel.find().lean();

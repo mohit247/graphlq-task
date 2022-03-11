@@ -10,7 +10,6 @@ const typeDefs = gql`
     age: Int!
   }
   type Query {
-    hello: String!
     getUsers: [User!]!
     viewUser(id: ID!): User!
   }
