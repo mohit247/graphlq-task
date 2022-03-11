@@ -1,5 +1,5 @@
 const { ApolloServer, gql } = require('apollo-server-express');
-let { User } = require('../../common/user');
+
 const { Types } = require('mongoose');
 let UserModel = require('../../models/User');
 const resolvers = {
