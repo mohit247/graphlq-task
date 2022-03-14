@@ -12,6 +12,10 @@
 
 ## *npm run dev*
 
+###  To run the db migration files:
+
+## *knex migrate:latest*
+
 ### To run the Test Cases:
 
 ## *npm run test*
