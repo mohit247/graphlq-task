@@ -1,13 +1,7 @@
 import { gql } from 'apollo-server-express';
-import { testClient, connectToDb } from './testSetup';
-import { ObjectId } from 'mongodb';
+import { testClient } from './testSetup';
 
 const { query, mutate } = testClient;
-
-// beforeAll(() => {
-//   connectToDb();
-//   //await dropTestDb();
-// });
 
 describe('User Methods', () => {
   const user = 1;
