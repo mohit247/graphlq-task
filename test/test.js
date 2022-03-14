@@ -4,13 +4,13 @@ import { ObjectId } from 'mongodb';
 
 const { query, mutate } = testClient;
 
-beforeAll(() => {
-  connectToDb();
-  //await dropTestDb();
-});
+// beforeAll(() => {
+//   connectToDb();
+//   //await dropTestDb();
+// });
 
 describe('User Methods', () => {
-  const user = '622aef371e9a9941e82f8396';
+  const user = 1;
 
   it('Add User', async () => {
     const addUser = gql`
@@ -18,16 +18,19 @@ describe('User Methods', () => {
         $firstName: String!
         $lastName: String!
         $email: String!
+        $password: String!
         $age: Int!
       ) {
         addUser(
           firstName: $firstName
           lastName: $lastName
           email: $email
+          password: $password
           age: $age
         ) {
           firstName
           lastName
+          password
           email
           age
         }
@@ -37,6 +40,7 @@ describe('User Methods', () => {
       firstName: 'jon',
       lastName: 'snow',
       email: 'jon@gmail.com',
+      password: '123456',
       age: 23,
     };
 
@@ -58,8 +62,8 @@ describe('User Methods', () => {
     const viewUser = gql`
       query viewUser($id: ID!) {
         viewUser(id: $id) {
-          _id
-
+          id
+          age
           firstName
           lastName
           email
@@ -79,7 +83,7 @@ describe('User Methods', () => {
     const getUsers = gql`
       query getUsers {
         getUsers {
-          _id
+          id
           firstName
           lastName
           email
