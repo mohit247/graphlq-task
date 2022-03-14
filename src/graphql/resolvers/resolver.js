@@ -1,11 +1,12 @@
-const { ApolloServer, gql } = require('apollo-server-express');
+// const { ApolloServer, gql } = require('apollo-server-express');
+import { ApolloServer, gql } from 'apollo-server-express';
 
-const { Types } = require('mongoose');
-let UserModel = require('../../models/User');
+//const { Types } = require('mongoose');
+import { Types } from 'mongoose';
+import { UserModel } from '../../models/User';
 const resolvers = {
   Query: {
     getUsers: async () => {
-      console.log(' UserModel.find()', await UserModel.find().lean());
       return await UserModel.find().lean();
     },
     viewUser: async (parent, args) => {
@@ -62,4 +63,5 @@ const resolvers = {
     },
   },
 };
-module.exports = { resolvers };
+// module.exports = { resolvers };
+export { resolvers };

@@ -1,12 +1,10 @@
-const { createTestClient } = require('apollo-server-testing');
-const { ApolloServer } = require('apollo-server-express');
-const mongoose = require('mongoose');
+import { createTestClient } from 'apollo-server-testing';
+import { ApolloServer } from 'apollo-server-express';
+import mongoose from 'mongoose';
 
-const { typeDefs } = require('../src/graphql/schemas/schema');
-const { resolvers } = require('../src/graphql/resolvers/resolver');
-// const Device = require('../models/Device');
-// const DeviceSetting = require('../models/DeviceSetting');
-const UserModel = require('../src/models/User');
+import { typeDefs } from '../src/graphql/schemas';
+import { resolvers } from '../src/graphql/resolvers';
+import { UserModel } from '../src/models';
 
 const connectToDb = async () => {
   await mongoose

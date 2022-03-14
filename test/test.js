@@ -1,11 +1,11 @@
-const { gql } = require('apollo-server-express');
-const { testClient, connectToDb } = require('./testSetup');
-const { ObjectId } = require('mongodb');
+import { gql } from 'apollo-server-express';
+import { testClient, connectToDb } from './testSetup';
+import { ObjectId } from 'mongodb';
 
 const { query, mutate } = testClient;
 
-beforeAll(async () => {
-  await connectToDb();
+beforeAll(() => {
+  connectToDb();
   //await dropTestDb();
 });
 
